@@ -1,0 +1,14 @@
+{% func WebpageHtml(pageData Webpage) %}!<DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{%s pageData.Title %}</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  </head>
+  <body>
+
+  {%s= pageData.NavbarString() %}
+
+  </body>
+</html>  
+{% endfunc %}
