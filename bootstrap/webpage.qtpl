@@ -9,6 +9,8 @@
 
   {%s= pageData.NavbarString() %}
 
+  {%s= pageData.MainString() %}
+
   </body>
 </html>  
 {% endfunc %}
