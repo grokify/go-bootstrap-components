@@ -52,50 +52,48 @@ func (a Alert) Class() string {
 	return alertPrefix + strings.ToLower(a.String())
 }
 
-type AlertBordered int
+type AlertColored int
 
 const (
-	PrimaryB AlertBordered = iota
+	PrimaryB AlertColored = iota
 	SecondaryB
 	SuccessB
 	DangerB
 	WarningB
 	InfoB
-	DarkB
 )
 
-var alertsbordered = [...]string{
+var alertscolored = [...]string{
 	"Primary",
 	"Secondary",
 	"Success",
 	"Danger",
 	"Warning",
 	"Info",
-	"Dark",
 }
 
-func NewAlertBordered(idx int) AlertBordered {
-	return AlertBordered(bigint.Int64Mod(int64(idx), int64(len(alertsbordered))))
+func NewAlertColored(idx int) AlertColored {
+	return AlertColored(bigint.Int64Mod(int64(idx), int64(len(alertscolored))))
 }
 
 // Class returns the class name of the alert ("Primary", "Secondary", ...).
-func (a AlertBordered) String() string {
-	if a >= PrimaryB && a <= DarkB {
-		return alertsbordered[a]
+func (a AlertColored) String() string {
+	if a >= PrimaryB && a <= InfoB {
+		return alertscolored[a]
 	}
-	a2 := NewAlertBordered(int(a))
-	return alertsbordered[a2]
+	a2 := NewAlertColored(int(a))
+	return alertscolored[a2]
 }
 
 // Class returns the class name of the alert ("Primary", "Secondary", ...).
-func (a AlertBordered) Class() string {
+func (a AlertColored) Class() string {
 	return alertPrefix + strings.ToLower(a.String())
 }
 
 const alertDivFormat string = `<div class="alert alert-%s" role="alert">`
 
 // Class returns the class name of the alert ("Primary", "Secondary", ...).
-func (a AlertBordered) DivHtml(innerHtml string) string {
+func (a AlertColored) DivHtml(innerHtml string) string {
 	alertString := a.String()
 	begin := fmt.Sprintf(alertDivFormat, strings.ToLower(alertString))
 	return begin + innerHtml + "</div>"
