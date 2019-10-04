@@ -55,12 +55,12 @@ func (a Alert) Class() string {
 type AlertColored int
 
 const (
-	PrimaryB AlertColored = iota
-	SecondaryB
-	SuccessB
-	DangerB
-	WarningB
-	InfoB
+	PrimaryC AlertColored = iota
+	SecondaryC
+	SuccessC
+	DangerC
+	WarningC
+	InfoC
 )
 
 var alertscolored = [...]string{
@@ -78,7 +78,7 @@ func NewAlertColored(idx int) AlertColored {
 
 // Class returns the class name of the alert ("Primary", "Secondary", ...).
 func (a AlertColored) String() string {
-	if a >= PrimaryB && a <= InfoB {
+	if a >= PrimaryC && a <= InfoC {
 		return alertscolored[a]
 	}
 	a2 := NewAlertColored(int(a))

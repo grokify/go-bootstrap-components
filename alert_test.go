@@ -9,13 +9,13 @@ var alertColoredTests = []struct {
 	vAlertIndex int
 	want        string
 }{
-	{PrimaryB, 0, "Primary"},
-	{SecondaryB, 1, "Secondary"},
-	{SuccessB, 2, "Success"},
-	{DangerB, 3, "Danger"},
-	{WarningB, 4, "Warning"},
-	{InfoB, 5, "Info"},
-	{PrimaryB, 6, "Primary"},
+	{PrimaryC, 0, "Primary"},
+	{SecondaryC, 1, "Secondary"},
+	{SuccessC, 2, "Success"},
+	{DangerC, 3, "Danger"},
+	{WarningC, 4, "Warning"},
+	{InfoC, 5, "Info"},
+	{PrimaryC, 6, "Primary"},
 }
 
 func TestAlertColored(t *testing.T) {
@@ -44,7 +44,7 @@ var alertColoredDivTests = []struct {
 	vText  string
 	want   string
 }{
-	{PrimaryB, "foo bar", `<div class="alert alert-primary" role="alert">foo bar</div>`},
+	{PrimaryC, "foo bar", `<div class="alert alert-primary" role="alert">foo bar</div>`},
 }
 
 func TestAlertBorderedDiv(t *testing.T) {
