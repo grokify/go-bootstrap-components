@@ -1,5 +1,5 @@
 language: go
-go_import_path: github.com/grokify/go-bootstrap-quicktemplate
+go_import_path: github.com/grokify/go-bootstrap-components
 go:
   - "1.13.x"
   - "1.12.x"
