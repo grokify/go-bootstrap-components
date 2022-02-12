@@ -1,7 +1,7 @@
 package examples
 
 import (
-	"github.com/grokify/go-bootstrap-quicktemplate"
+	"github.com/grokify/go-bootstrap-components"
 )
 
 func ExampleNavbar() bootstrap.Navbar {
