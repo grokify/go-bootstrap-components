@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/grokify/gotilla/math/bigint"
+	"github.com/grokify/mogo/math/bigint"
 )
 
 type Alert int

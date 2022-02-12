@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/grokify/go-bootstrap-quicktemplate"
-	"github.com/grokify/go-bootstrap-quicktemplate/examples"
+	"github.com/grokify/go-bootstrap-components"
+	"github.com/grokify/go-bootstrap-components/examples"
 )
 
 func main() {
