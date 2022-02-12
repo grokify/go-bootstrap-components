@@ -11,8 +11,8 @@ This is a library to generate various Bootstrap examples boilerplate for Quickte
 * [Bootstrap examples](https://getbootstrap.com/docs/4.3/examples/)
 * [Quicktemplate](https://github.com/valyala/quicktemplate)
 
- [build-status-svg]: https://api.travis-ci.org/grokify/go-bootstrap-components.svg?branch=master
- [build-status-link]: https://travis-ci.org/grokify/go-bootstrap-components
+ [build-status-svg]: https://github.com/grokify/go-bootstrap-components/workflows/go%20build/badge.svg
+ [build-status-url]: https://github.com/grokify/go-bootstrap-components/actions
  [goreport-svg]: https://goreportcard.com/badge/github.com/grokify/go-bootstrap-components
  [goreport-link]: https://goreportcard.com/report/github.com/grokify/go-bootstrap-components
  [docs-godoc-svg]: https://img.shields.io/badge/docs-godoc-blue.svg
