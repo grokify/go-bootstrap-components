@@ -49,7 +49,7 @@ var alertColoredDivTests = []struct {
 
 func TestAlertBorderedDiv(t *testing.T) {
 	for _, tt := range alertColoredDivTests {
-		got := tt.vAlert.DivHtml(tt.vText)
+		got := tt.vAlert.DivHTML(tt.vText)
 		if got != tt.want {
 			t.Errorf("AlertColored: %v.DivHtml(): want[%v], got [%v]", tt.vAlert.String(), tt.want, got)
 		}

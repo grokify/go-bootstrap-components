@@ -93,7 +93,7 @@ func (a AlertColored) Class() string {
 const alertDivFormat string = `<div class="alert alert-%s" role="alert">`
 
 // Class returns the class name of the alert ("Primary", "Secondary", ...).
-func (a AlertColored) DivHtml(innerHtml string) string {
+func (a AlertColored) DivHTML(innerHTML string) string {
 	begin := fmt.Sprintf(alertDivFormat, strings.ToLower(a.String()))
-	return begin + innerHtml + "</div>"
+	return begin + innerHTML + "</div>"
 }
