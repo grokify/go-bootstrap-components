@@ -5,7 +5,7 @@ package bootstrap
 type Webpage struct {
 	Title    string
 	Navbar   Navbar
-	MainHtml string
+	MainHTML string
 }
 
 func (pg *Webpage) NavbarString() string {
@@ -13,7 +13,7 @@ func (pg *Webpage) NavbarString() string {
 }
 
 func (pg *Webpage) MainString() string {
-	return pg.MainHtml
+	return pg.MainHTML
 }
 
 func (pg *Webpage) FooterString() string {
