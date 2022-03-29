@@ -1,4 +1,4 @@
-{% func WebpageHtml(pageData Webpage) %}!<DOCTYPE html>
+{% func WebpageHTML(pageData Webpage) %}!<DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">

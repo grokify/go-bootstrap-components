@@ -8,24 +8,24 @@ func ExampleNavbar() bootstrap.Navbar {
 	return bootstrap.Navbar{
 		Title: bootstrap.Link{
 			Href:      "/",
-			InnerHtml: "FooBar"},
+			InnerHTML: "FooBar"},
 		MenuLinks: []bootstrap.Link{
 			{
 				Href:      "/solutions",
-				InnerHtml: "Solutions"},
+				InnerHTML: "Solutions"},
 			{
 				Href:      "/products",
-				InnerHtml: "Products"},
+				InnerHTML: "Products"},
 			{
 				Href:      "/resources",
-				InnerHtml: "Resources",
+				InnerHTML: "Resources",
 				SubLinks: []bootstrap.Link{
 					{
 						Href:      "/resources/foo",
-						InnerHtml: "Foo"},
+						InnerHTML: "Foo"},
 					{
 						Href:      "/resources/bar",
-						InnerHtml: "Bar"},
+						InnerHTML: "Bar"},
 				}},
 		},
 		Search: bootstrap.Search{
@@ -42,8 +42,8 @@ func ExampleWebpage() bootstrap.Webpage {
 	}
 }
 
-func ExampleWebpageHtmlString() string {
+func ExampleWebpageHTMLString() string {
 	pg := ExampleWebpage()
-	pgHtmlString := bootstrap.WebpageHtml(pg)
+	pgHtmlString := bootstrap.WebpageHTML(pg)
 	return pgHtmlString
 }

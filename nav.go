@@ -10,7 +10,7 @@ type Navbar struct {
 
 type Link struct {
 	Href      string
-	InnerHtml string
+	InnerHTML string
 	Current   bool
 	SubLinks  []Link
 }

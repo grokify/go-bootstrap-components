@@ -9,30 +9,30 @@ import (
 
 func main() {
 
-	fmt.Println(examples.ExampleWebpageHtmlString())
+	fmt.Println(examples.ExampleWebpageHTMLString())
 
 	if 1 == 0 {
 		nav := bootstrap.Navbar{
 			Title: bootstrap.Link{
 				Href:      "/",
-				InnerHtml: "FooBar"},
+				InnerHTML: "FooBar"},
 			MenuLinks: []bootstrap.Link{
 				{
 					Href:      "/solutions",
-					InnerHtml: "Solutions"},
+					InnerHTML: "Solutions"},
 				{
 					Href:      "/products",
-					InnerHtml: "Products"},
+					InnerHTML: "Products"},
 				{
 					Href:      "/resources",
-					InnerHtml: "Resources",
+					InnerHTML: "Resources",
 					SubLinks: []bootstrap.Link{
 						{
 							Href:      "/resources/foo",
-							InnerHtml: "Foo"},
+							InnerHTML: "Foo"},
 						{
 							Href:      "/resources/bar",
-							InnerHtml: "Bar"},
+							InnerHTML: "Bar"},
 					}},
 			},
 			Search: bootstrap.Search{
@@ -47,7 +47,7 @@ func main() {
 			Title:  "FooBar Home",
 			Navbar: nav,
 		}
-		pgHtml := bootstrap.WebpageHtml(pg)
+		pgHtml := bootstrap.WebpageHTML(pg)
 		fmt.Println(pgHtml)
 	}
 	//fmt.Println("DONE")

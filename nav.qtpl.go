@@ -28,7 +28,7 @@ func StreamNavbarHtml(qw422016 *qt422016.Writer, navData Navbar) {
 //line nav.qtpl:3
 	qw422016.N().S(`">`)
 //line nav.qtpl:3
-	qw422016.E().S(navData.Title.InnerHtml)
+	qw422016.E().S(navData.Title.InnerHTML)
 //line nav.qtpl:3
 	qw422016.N().S(`</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,7 +65,7 @@ func StreamNavbarHtml(qw422016 *qt422016.Writer, navData Navbar) {
 //line nav.qtpl:16
 					qw422016.N().S(`">`)
 //line nav.qtpl:16
-					qw422016.E().S(link.InnerHtml)
+					qw422016.E().S(link.InnerHTML)
 //line nav.qtpl:16
 					qw422016.N().S(` <span class="sr-only">(current)</span></a>
       </li>
@@ -81,7 +81,7 @@ func StreamNavbarHtml(qw422016 *qt422016.Writer, navData Navbar) {
 //line nav.qtpl:20
 					qw422016.N().S(`">`)
 //line nav.qtpl:20
-					qw422016.E().S(link.InnerHtml)
+					qw422016.E().S(link.InnerHTML)
 //line nav.qtpl:20
 					qw422016.N().S(`</a>
       </li>
@@ -97,7 +97,7 @@ func StreamNavbarHtml(qw422016 *qt422016.Writer, navData Navbar) {
 				qw422016.N().S(`
       <li class="nav-item">`)
 //line nav.qtpl:24
-				qw422016.E().S(link.InnerHtml)
+				qw422016.E().S(link.InnerHTML)
 //line nav.qtpl:24
 				qw422016.N().S(`</li>
     `)
@@ -117,7 +117,7 @@ func StreamNavbarHtml(qw422016 *qt422016.Writer, navData Navbar) {
 //line nav.qtpl:28
 			qw422016.N().S(`" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">`)
 //line nav.qtpl:28
-			qw422016.E().S(link.InnerHtml)
+			qw422016.E().S(link.InnerHTML)
 //line nav.qtpl:28
 			qw422016.N().S(`</a>
         <div class="dropdown-menu" aria-labelledby="dropdown01">
@@ -132,7 +132,7 @@ func StreamNavbarHtml(qw422016 *qt422016.Writer, navData Navbar) {
 //line nav.qtpl:31
 				qw422016.N().S(`">`)
 //line nav.qtpl:31
-				qw422016.E().S(sublink.InnerHtml)
+				qw422016.E().S(sublink.InnerHTML)
 //line nav.qtpl:31
 				qw422016.N().S(`</a>
           `)

@@ -18,7 +18,7 @@ var (
 )
 
 //line webpage.qtpl:1
-func StreamWebpageHtml(qw422016 *qt422016.Writer, pageData Webpage) {
+func StreamWebpageHTML(qw422016 *qt422016.Writer, pageData Webpage) {
 //line webpage.qtpl:1
 	qw422016.N().S(`!<DOCTYPE html>
 <html>
@@ -52,22 +52,22 @@ func StreamWebpageHtml(qw422016 *qt422016.Writer, pageData Webpage) {
 }
 
 //line webpage.qtpl:16
-func WriteWebpageHtml(qq422016 qtio422016.Writer, pageData Webpage) {
+func WriteWebpageHTML(qq422016 qtio422016.Writer, pageData Webpage) {
 //line webpage.qtpl:16
 	qw422016 := qt422016.AcquireWriter(qq422016)
 //line webpage.qtpl:16
-	StreamWebpageHtml(qw422016, pageData)
+	StreamWebpageHTML(qw422016, pageData)
 //line webpage.qtpl:16
 	qt422016.ReleaseWriter(qw422016)
 //line webpage.qtpl:16
 }
 
 //line webpage.qtpl:16
-func WebpageHtml(pageData Webpage) string {
+func WebpageHTML(pageData Webpage) string {
 //line webpage.qtpl:16
 	qb422016 := qt422016.AcquireByteBuffer()
 //line webpage.qtpl:16
-	WriteWebpageHtml(qb422016, pageData)
+	WriteWebpageHTML(qb422016, pageData)
 //line webpage.qtpl:16
 	qs422016 := string(qb422016.B)
 //line webpage.qtpl:16
