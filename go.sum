@@ -18,8 +18,8 @@ github.com/google/gofuzz v1.0.0/go.mod h1:dBl0BpW6vV/+mYPU4Po3pmUjxk6FQPldtuIdl/
 github.com/gorilla/css v1.0.0/go.mod h1:Dn721qIggHpt4+EFCcTLTU/vk5ySda2ReITrtgBl60c=
 github.com/grokify/base36 v1.0.5/go.mod h1:L+1aaUBGfp5Ctar7KCS5G9uPABo1Ccu1Ct2iQAuhOJ4=
 github.com/grokify/bitcoinmath v0.1.0/go.mod h1:Y8OyDefB55NHGzi+uJshYmE4Hn5juIQqJahsQJN5o2k=
-github.com/grokify/mogo v0.38.1 h1:QIcRUSLz00X/CnDQk97lFizI2nv5GHH+OoaQAUkkzZA=
-github.com/grokify/mogo v0.38.1/go.mod h1:C4rAfY6EmQe1jxESH+KND19PxHwy6EoG5n6yGVBSOgk=
+github.com/grokify/mogo v0.38.4 h1:uyK5TCDYHWU3j9ugtTp4zYRi7W/wzXphRDngtKsmC98=
+github.com/grokify/mogo v0.38.4/go.mod h1:C4rAfY6EmQe1jxESH+KND19PxHwy6EoG5n6yGVBSOgk=
 github.com/huandu/xstrings v1.3.2/go.mod h1:y5/lhBue+AyNmUVz9RLU9xbLR0o4KIIExikq4ovT0aE=
 github.com/itchyny/base58-go v0.2.0/go.mod h1:uSBhd5brsJi5iG4IVb0egRS7SsGU1kgf+xO1AbKMCJE=
 github.com/jessevdk/go-flags v1.5.0/go.mod h1:Fw0T6WPc1dYxT4mKEZRfG5kJhaTDP9pj1c2EWnYs/m4=
