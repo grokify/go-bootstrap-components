@@ -1,15 +1,15 @@
 package examples
 
 import (
-	"github.com/grokify/go-bootstrap-components"
+	"github.com/grokify/bootstrapper"
 )
 
-func ExampleNavbar() bootstrap.Navbar {
-	return bootstrap.Navbar{
-		Title: bootstrap.Link{
+func ExampleNavbar() bootstrapper.Navbar {
+	return bootstrapper.Navbar{
+		Title: bootstrapper.Link{
 			Href:      "/",
 			InnerHTML: "FooBar"},
-		MenuLinks: []bootstrap.Link{
+		MenuLinks: []bootstrapper.Link{
 			{
 				Href:      "/solutions",
 				InnerHTML: "Solutions"},
@@ -19,7 +19,7 @@ func ExampleNavbar() bootstrap.Navbar {
 			{
 				Href:      "/resources",
 				InnerHTML: "Resources",
-				SubLinks: []bootstrap.Link{
+				SubLinks: []bootstrapper.Link{
 					{
 						Href:      "/resources/foo",
 						InnerHTML: "Foo"},
@@ -28,15 +28,15 @@ func ExampleNavbar() bootstrap.Navbar {
 						InnerHTML: "Bar"},
 				}},
 		},
-		Search: bootstrap.Search{
+		Search: bootstrapper.Search{
 			Action: "/search",
 			Method: "GET",
 		},
 	}
 }
 
-func ExampleWebpage() bootstrap.Webpage {
-	return bootstrap.Webpage{
+func ExampleWebpage() bootstrapper.Webpage {
+	return bootstrapper.Webpage{
 		Title:  "FooBar Home",
 		Navbar: ExampleNavbar(),
 	}
@@ -44,6 +44,6 @@ func ExampleWebpage() bootstrap.Webpage {
 
 func ExampleWebpageHTMLString() string {
 	pg := ExampleWebpage()
-	pgHtmlString := bootstrap.WebpageHTML(pg)
+	pgHtmlString := bootstrapper.WebpageHTML(pg)
 	return pgHtmlString
 }

@@ -2,7 +2,7 @@
 // See https://github.com/valyala/quicktemplate for details.
 
 //line nav.qtpl:1
-package bootstrap
+package bootstrapper
 
 //line nav.qtpl:1
 import (

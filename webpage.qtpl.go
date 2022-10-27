@@ -2,7 +2,7 @@
 // See https://github.com/valyala/quicktemplate for details.
 
 //line webpage.qtpl:1
-package bootstrap
+package bootstrapper
 
 //line webpage.qtpl:1
 import (

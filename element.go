@@ -1,4 +1,4 @@
-package bootstrap
+package bootstrapper
 
 type Element interface {
 	HTML() (string, error)

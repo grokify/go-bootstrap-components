@@ -3,20 +3,19 @@ package main
 import (
 	"fmt"
 
-	"github.com/grokify/go-bootstrap-components"
-	"github.com/grokify/go-bootstrap-components/examples"
+	"github.com/grokify/bootstrapper"
+	"github.com/grokify/bootstrapper/examples"
 )
 
 func main() {
-
 	fmt.Println(examples.ExampleWebpageHTMLString())
 
 	if 1 == 0 {
-		nav := bootstrap.Navbar{
-			Title: bootstrap.Link{
+		nav := bootstrapper.Navbar{
+			Title: bootstrapper.Link{
 				Href:      "/",
 				InnerHTML: "FooBar"},
-			MenuLinks: []bootstrap.Link{
+			MenuLinks: []bootstrapper.Link{
 				{
 					Href:      "/solutions",
 					InnerHTML: "Solutions"},
@@ -26,7 +25,7 @@ func main() {
 				{
 					Href:      "/resources",
 					InnerHTML: "Resources",
-					SubLinks: []bootstrap.Link{
+					SubLinks: []bootstrapper.Link{
 						{
 							Href:      "/resources/foo",
 							InnerHTML: "Foo"},
@@ -35,7 +34,7 @@ func main() {
 							InnerHTML: "Bar"},
 					}},
 			},
-			Search: bootstrap.Search{
+			Search: bootstrapper.Search{
 				Action: "/search",
 				Method: "GET",
 			},
@@ -43,11 +42,11 @@ func main() {
 		//navHtml := bootstrap.NavbarHtml(nav)
 		//fmt.Println(navHtml)
 
-		pg := bootstrap.Webpage{
+		pg := bootstrapper.Webpage{
 			Title:  "FooBar Home",
 			Navbar: nav,
 		}
-		pgHtml := bootstrap.WebpageHTML(pg)
+		pgHtml := bootstrapper.WebpageHTML(pg)
 		fmt.Println(pgHtml)
 	}
 	//fmt.Println("DONE")

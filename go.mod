@@ -1,4 +1,4 @@
-module github.com/grokify/go-bootstrap-components
+module github.com/grokify/bootstrapper
 
 go 1.16
 

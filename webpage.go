@@ -1,4 +1,4 @@
-package bootstrap
+package bootstrapper
 
 // view-source:https://getbootstrap.com/docs/4.3/examples/jumbotron/
 
