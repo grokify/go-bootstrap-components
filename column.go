@@ -3,8 +3,8 @@ package bootstrapper
 import (
 	"errors"
 	"fmt"
-	"strings"
 
+	"github.com/grokify/mogo/html/htmlutil"
 	"github.com/grokify/mogo/type/stringsutil"
 )
 
@@ -17,7 +17,8 @@ const (
 )
 
 type Column struct {
-	ElementBase
+	htmlutil.Element
+	//ElementBase
 	SizeDefaultWidth int
 	SizeAllHidden    bool
 	XsWidth          int
@@ -35,24 +36,25 @@ var (
 	ErrWidthIsNegative = errors.New("width cannot be negative")
 )
 
-func (col *Column) Class() (string, error) {
+// Classes returns a list of column-related Bootstrap classes.
+func (col *Column) Classes() ([]string, error) {
 	classes := []string{}
 	var err error
 	classes, err = colClassAppendNotErr(classes, ColSizeXs, col.XsWidth, col.SizeDefaultWidth)
 	if err != nil {
-		return "", err
+		return classes, err
 	}
 	classes, err = colClassAppendNotErr(classes, ColSizeSm, col.SmWidth, col.SizeDefaultWidth)
 	if err != nil {
-		return "", err
+		return classes, err
 	}
 	classes, err = colClassAppendNotErr(classes, ColSizeMd, col.MdWidth, col.SizeDefaultWidth)
 	if err != nil {
-		return "", err
+		return classes, err
 	}
 	classes, err = colClassAppendNotErr(classes, ColSizeLg, col.LgWidth, col.SizeDefaultWidth)
 	if err != nil {
-		return "", err
+		return classes, err
 	}
 	if col.XsHidden || col.SizeAllHidden {
 		classes = append(classes, "hidden-"+ColSizeXs)
@@ -66,9 +68,10 @@ func (col *Column) Class() (string, error) {
 	if col.LgHidden || col.SizeAllHidden {
 		classes = append(classes, "hidden-"+ColSizeLg)
 	}
-	classes = append(classes, col.AdditionalClasses...)
+	// classes = append(classes, col.AdditionalClasses...)
 	classes = stringsutil.SliceCondenseSpace(classes, true, true)
-	return strings.Join(classes, " "), nil
+	return classes, nil
+	// return strings.Join(classes, " "), nil
 }
 
 func colClassAppendNotErr(s []string, size string, width, defaultWidth int) ([]string, error) {
@@ -85,33 +88,42 @@ func colClassAppendNotErr(s []string, size string, width, defaultWidth int) ([]s
 	return s, nil
 }
 
-func (col *Column) HTML() (string, error) {
-	attrs := map[string]string{}
-	for k, v := range col.AdditionalProperties {
-		attrs[k] = v
-	}
-	cls, err := col.Class()
+func (col *Column) String() (string, error) {
+	classes, err := col.Classes()
 	if err != nil {
 		return "", err
-	} else if len(cls) > 0 {
-		attrs["class"] = cls
 	}
-	innerHTML := ""
-	for _, el := range col.InnerHTML {
-		if el == nil {
-			continue
+	col.AddAttribute(htmlutil.AttributeClass, classes...)
+	return col.Element.String() // from `html.Element`
+	/*
+		attrs := map[string]string{}
+		for k, v := range col.AdditionalProperties {
+			attrs[k] = v
 		}
-		elHTML, err := el.HTML()
+		cls, err := col.Class()
 		if err != nil {
 			return "", err
+		} else if len(cls) > 0 {
+			attrs["class"] = cls
 		}
-		if len(innerHTML) > 0 {
-			innerHTML += elHTML
+		innerHTML := ""
+		for _, el := range col.InnerHTML {
+			if el == nil {
+				continue
+			}
+			elHTML, err := el.HTML()
+			if err != nil {
+				return "", err
+			}
+			if len(innerHTML) > 0 {
+				innerHTML += elHTML
+			}
 		}
-	}
-	return fmt.Sprintf(`%s%s</div>`, TagOpening("div", attrs, false), innerHTML), nil
+		return fmt.Sprintf(`%s%s</div>`, TagOpening("div", attrs, false), innerHTML), nil
+	*/
 }
 
+// ColWidthToClass creates a class string where `size` must be in `[xs,sm,md,lg]` and size must be `[1,12]``.
 func ColWidthToClass(size string, width int) (string, error) {
 	if width > ColMaxWidth {
 		return "", ErrWidthTooLarge

@@ -1,26 +1,29 @@
 package bootstrapper
 
-import (
-	"fmt"
-	"strings"
+import "github.com/grokify/mogo/html/htmlutil"
 
-	"github.com/grokify/mogo/type/maputil"
-	"github.com/grokify/mogo/type/stringsutil"
-)
+type Generic htmlutil.Element
 
+/*
 type Generic struct {
 	TagName string
-	ElementBase
+	//ElementBase
+	htmlutil.Element
 }
+*/
 
+/*
 func (gen *Generic) Class() (string, error) {
 	classes := []string{}
 	classes = append(classes, gen.AdditionalClasses...)
 	classes = stringsutil.SliceCondenseSpace(classes, true, true)
 	return strings.Join(classes, " "), nil
 }
+*/
 
-func (gen *Generic) HTML() (string, error) {
+//func (gen *Generic) HTML() (string, error) {
+//	return gen.String(), nil // from `html.Element`
+/*
 	attrs := map[string]string{}
 	for k, v := range gen.AdditionalProperties {
 		attrs[k] = v
@@ -49,8 +52,10 @@ func (gen *Generic) HTML() (string, error) {
 		tag = "div"
 	}
 	return fmt.Sprintf(`%s%s</%s>`, TagOpening(tag, attrs, false), innerHTML, tag), nil
-}
+*/
+//}
 
+/*
 // TagOpening creates HTML for an opening tag.
 func TagOpening(tagName string, attrs map[string]string, close bool) string {
 	parts := []string{tagName}
@@ -72,3 +77,4 @@ func TagOpening(tagName string, attrs map[string]string, close bool) string {
 	}
 	return "<" + strings.Join(parts, " ") + ">"
 }
+*/
