@@ -4,10 +4,12 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/grokify/mogo/type/maputil"
 	"github.com/grokify/mogo/type/stringsutil"
 )
 
 type Generic struct {
+	TagName string
 	ElementBase
 }
 
@@ -19,21 +21,15 @@ func (gen *Generic) Class() (string, error) {
 }
 
 func (gen *Generic) HTML() (string, error) {
+	attrs := map[string]string{}
+	for k, v := range gen.AdditionalProperties {
+		attrs[k] = v
+	}
 	cls, err := gen.Class()
 	if err != nil {
 		return "", err
-	}
-	classHTML := ""
-	if len(cls) > 0 {
-		classHTML = fmt.Sprintf(` class="%s"`, cls)
-	}
-	styleHTML := ""
-	if len(gen.Style) > 0 {
-		styleHTML = fmt.Sprintf(` style='%s"`, gen.Style)
-	}
-	addlHTML := ""
-	for k, v := range gen.AdditionalProperties {
-		addlHTML += fmt.Sprintf(` %s="%s"`, k, v)
+	} else if len(cls) > 0 {
+		attrs["class"] = cls
 	}
 	innerHTML := ""
 	for _, el := range gen.InnerHTML {
@@ -48,5 +44,31 @@ func (gen *Generic) HTML() (string, error) {
 			innerHTML += elHTML
 		}
 	}
-	return fmt.Sprintf(`<div%s%s%s>%s</div>`, classHTML, styleHTML, addlHTML, innerHTML), nil
+	tag := strings.TrimSpace(gen.TagName)
+	if len(tag) == 0 {
+		tag = "div"
+	}
+	return fmt.Sprintf(`%s%s</%s>`, TagOpening(tag, attrs, false), innerHTML, tag), nil
+}
+
+// TagOpening creates HTML for an opening tag.
+func TagOpening(tagName string, attrs map[string]string, close bool) string {
+	parts := []string{tagName}
+	if len(attrs) > 0 {
+		keys := maputil.StringKeys(attrs, nil, true)
+		for _, key := range keys {
+			val, ok := attrs[key]
+			if !ok {
+				panic("extracted key not found")
+			}
+			parts = append(parts, fmt.Sprintf(`%s="%s"`, key, val))
+		}
+	}
+	if close {
+		parts = append(parts, "/")
+	}
+	if len(parts) == 0 {
+		return ""
+	}
+	return "<" + strings.Join(parts, " ") + ">"
 }

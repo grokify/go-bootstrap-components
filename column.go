@@ -86,21 +86,15 @@ func colClassAppendNotErr(s []string, size string, width, defaultWidth int) ([]s
 }
 
 func (col *Column) HTML() (string, error) {
+	attrs := map[string]string{}
+	for k, v := range col.AdditionalProperties {
+		attrs[k] = v
+	}
 	cls, err := col.Class()
 	if err != nil {
 		return "", err
-	}
-	classHTML := ""
-	if len(cls) > 0 {
-		classHTML = fmt.Sprintf(` class="%s"`, cls)
-	}
-	styleHTML := ""
-	if len(col.Style) > 0 {
-		styleHTML = fmt.Sprintf(` style='%s"`, col.Style)
-	}
-	addlHTML := ""
-	for k, v := range col.AdditionalProperties {
-		addlHTML += fmt.Sprintf(` %s="%s"`, k, v)
+	} else if len(cls) > 0 {
+		attrs["class"] = cls
 	}
 	innerHTML := ""
 	for _, el := range col.InnerHTML {
@@ -115,7 +109,7 @@ func (col *Column) HTML() (string, error) {
 			innerHTML += elHTML
 		}
 	}
-	return fmt.Sprintf(`<div%s%s%s>%s</div>`, classHTML, styleHTML, addlHTML, innerHTML), nil
+	return fmt.Sprintf(`%s%s</div>`, TagOpening("div", attrs, false), innerHTML), nil
 }
 
 func ColWidthToClass(size string, width int) (string, error) {
