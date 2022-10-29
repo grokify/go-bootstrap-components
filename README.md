@@ -11,6 +11,12 @@ This is a library to generate various Bootstrap examples boilerplate for Quickte
 * [Bootstrap examples](https://getbootstrap.com/docs/4.3/examples/)
 * [Quicktemplate](https://github.com/valyala/quicktemplate)
 
+Supported Components:
+
+- [x] Buttons - https://getbootstrap.com/docs/5.2/components/buttons/
+- [x] List Group - https://getbootstrap.com/docs/5.2/components/list-group/
+- [x] Panels - https://getbootstrap.com/docs/3.3/components/#panels
+
  [build-status-svg]: https://github.com/grokify/bootstrapper/workflows/go%20build/badge.svg
  [build-status-url]: https://github.com/grokify/bootstrapper/actions
  [goreport-svg]: https://goreportcard.com/badge/github.com/grokify/bootstrapper
