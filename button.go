@@ -7,15 +7,15 @@ import (
 	"golang.org/x/net/html/atom"
 )
 
-// Button return ssomething like `<button type="button" class="btn btn-success" style="width:100%" onclick="this.blur()">MyText</button>``
+// Button return ssomething like `<button type="button" class="btn btn-success" style="width:100%" onclick="this.blur()">MyText</button>`
 type Button struct {
 	htmlutil.Element
 }
 
 func NewButton() *Button {
 	but := &Button{}
-	but.TagName = atom.Button.String()
-	but.Attrs = map[string][]string{
+	but.Element.TagName = atom.Button.String()
+	but.Element.Attrs = map[string][]string{
 		"class": {ClassButton},
 		"type":  {"button"}}
 	return but
@@ -24,8 +24,7 @@ func NewButton() *Button {
 func (but *Button) SetColor(c string) error {
 	c = strings.ToLower(strings.TrimSpace(c))
 	if IsColor(c) {
-		but.AddAttribute(htmlutil.AttributeClass, ClassButton+"-"+c)
-		return nil
+		return but.Element.AddAttribute(htmlutil.AttributeClass, ClassButton+"-"+c)
 	}
 	return ErrColorUnknown
 }

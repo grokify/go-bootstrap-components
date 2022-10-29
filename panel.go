@@ -14,14 +14,16 @@ type Panel struct {
 func NewPanel() *Panel {
 	p := &Panel{}
 	p.TagName = atom.Div.String()
-	p.AddAttribute(htmlutil.AttributeClass, "panel")
+	err := p.Element.AddAttribute(htmlutil.AttributeClass, "panel")
+	if err != nil {
+		panic(err)
+	}
 	return p
 }
 
 func (p *Panel) Color(c string) error {
 	if IsColor(c) {
-		p.AddAttribute(htmlutil.AttributeClass, "panel-"+c)
-		return nil
+		return p.Element.AddAttribute(htmlutil.AttributeClass, "panel-"+c)
 	}
 	return ErrColorUnknown
 }
@@ -38,22 +40,31 @@ func (p *Panel) AddTitle(text string, escaped bool, tagName string) {
 
 	elTitle := &htmlutil.Element{}
 	elTitle.TagName = tagName
-	elTitle.AddAttribute(htmlutil.AttributeClass, ClassPanelTitle)
+	err := elTitle.AddAttribute(htmlutil.AttributeClass, ClassPanelTitle)
+	if err != nil {
+		panic(err)
+	}
 	elTitle.AddInnerHTML(elText)
 
 	elHeading := &htmlutil.Element{}
 	elHeading.TagName = atom.Div.String()
-	elHeading.AddAttribute(htmlutil.AttributeClass, ClassPanelHeading)
+	err = elHeading.AddAttribute(htmlutil.AttributeClass, ClassPanelHeading)
+	if err != nil {
+		panic(err)
+	}
 	elHeading.AddInnerHTML(elTitle)
-	p.AddInnerHTML(elHeading)
+	p.Element.AddInnerHTML(elHeading)
 }
 
 func (p *Panel) AddBody(text string, escaped bool) {
 	elBody := &htmlutil.Element{}
 	elBody.TagName = atom.Div.String()
-	elBody.AddAttribute(htmlutil.AttributeClass, ClassPanelBody)
+	err := elBody.AddAttribute(htmlutil.AttributeClass, ClassPanelBody)
+	if err != nil {
+		panic(err)
+	}
 	elBody.AddInnerHTML(&htmlutil.Text{
 		Text:    text,
 		Escaped: escaped})
-	p.AddInnerHTML(elBody)
+	p.Element.AddInnerHTML(elBody)
 }

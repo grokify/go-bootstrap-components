@@ -93,7 +93,10 @@ func (col *Column) String() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	col.AddAttribute(htmlutil.AttributeClass, classes...)
+	err = col.AddAttribute(htmlutil.AttributeClass, classes...)
+	if err != nil {
+		return "", err
+	}
 	return col.Element.String() // from `html.Element`
 	/*
 		attrs := map[string]string{}
@@ -123,7 +126,7 @@ func (col *Column) String() (string, error) {
 	*/
 }
 
-// ColWidthToClass creates a class string where `size` must be in `[xs,sm,md,lg]` and size must be `[1,12]``.
+// ColWidthToClass creates a class string where `size` must be in `[xs,sm,md,lg]` and size must be `[1,12]`.
 func ColWidthToClass(size string, width int) (string, error) {
 	if width > ColMaxWidth {
 		return "", ErrWidthTooLarge
