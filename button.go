@@ -4,6 +4,7 @@ import (
 	"strings"
 
 	"github.com/grokify/mogo/html/htmlutil"
+	"golang.org/x/net/html/atom"
 )
 
 // Button return ssomething like `<button type="button" class="btn btn-success" style="width:100%" onclick="this.blur()">MyText</button>``
@@ -13,7 +14,7 @@ type Button struct {
 
 func NewButton() *Button {
 	but := &Button{}
-	but.TagName = "button"
+	but.TagName = atom.Button.String()
 	but.Attrs = map[string][]string{
 		"class": {ClassButton},
 		"type":  {"button"}}

@@ -4,6 +4,7 @@ import (
 	"strings"
 
 	"github.com/grokify/mogo/html/htmlutil"
+	"golang.org/x/net/html/atom"
 )
 
 type Panel struct {
@@ -12,7 +13,7 @@ type Panel struct {
 
 func NewPanel() *Panel {
 	p := &Panel{}
-	p.TagName = htmlutil.TagDiv
+	p.TagName = atom.Div.String()
 	p.AddAttribute(htmlutil.AttributeClass, "panel")
 	return p
 }
@@ -32,7 +33,7 @@ func (p *Panel) AddTitle(text string, escaped bool, tagName string) {
 
 	tagName = strings.TrimSpace(tagName)
 	if len(tagName) == 0 {
-		tagName = "h1"
+		tagName = atom.H1.String()
 	}
 
 	elTitle := &htmlutil.Element{}
@@ -41,7 +42,7 @@ func (p *Panel) AddTitle(text string, escaped bool, tagName string) {
 	elTitle.AddInnerHTML(elText)
 
 	elHeading := &htmlutil.Element{}
-	elHeading.TagName = htmlutil.TagDiv
+	elHeading.TagName = atom.Div.String()
 	elHeading.AddAttribute(htmlutil.AttributeClass, ClassPanelHeading)
 	elHeading.AddInnerHTML(elTitle)
 	p.AddInnerHTML(elHeading)
@@ -49,7 +50,7 @@ func (p *Panel) AddTitle(text string, escaped bool, tagName string) {
 
 func (p *Panel) AddBody(text string, escaped bool) {
 	elBody := &htmlutil.Element{}
-	elBody.TagName = htmlutil.TagDiv
+	elBody.TagName = atom.Div.String()
 	elBody.AddAttribute(htmlutil.AttributeClass, ClassPanelBody)
 	elBody.AddInnerHTML(&htmlutil.Text{
 		Text:    text,
