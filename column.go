@@ -6,6 +6,7 @@ import (
 
 	"github.com/grokify/mogo/html/htmlutil"
 	"github.com/grokify/mogo/type/stringsutil"
+	"golang.org/x/net/html/atom"
 )
 
 const (
@@ -89,11 +90,12 @@ func colClassAppendNotErr(s []string, size string, width, defaultWidth int) ([]s
 }
 
 func (col *Column) String() (string, error) {
+	col.Element.TagName = atom.Div.String()
 	classes, err := col.Classes()
 	if err != nil {
 		return "", err
 	}
-	err = col.AddAttribute(htmlutil.AttributeClass, classes...)
+	err = col.Element.AddAttribute(htmlutil.AttributeClass, classes...)
 	if err != nil {
 		return "", err
 	}

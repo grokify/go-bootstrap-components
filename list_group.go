@@ -11,7 +11,7 @@ type ListGroup struct {
 
 func NewListGroup() *ListGroup {
 	grp := &ListGroup{}
-	grp.TagName = atom.Div.String()
+	grp.Element.TagName = atom.Div.String()
 	err := grp.Element.AddAttribute(htmlutil.AttributeClass, ClassListGroup)
 	if err != nil {
 		panic(err)

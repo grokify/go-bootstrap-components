@@ -13,7 +13,7 @@ type Panel struct {
 
 func NewPanel() *Panel {
 	p := &Panel{}
-	p.TagName = atom.Div.String()
+	p.Element.TagName = atom.Div.String()
 	err := p.Element.AddAttribute(htmlutil.AttributeClass, "panel")
 	if err != nil {
 		panic(err)
