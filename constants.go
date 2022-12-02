@@ -41,5 +41,5 @@ func Colors() []string {
 
 func IsColor(c string) bool {
 	colors := Colors()
-	return stringsutil.SliceIndex(colors, c) != -1
+	return stringsutil.SliceIndex(colors, c, false, nil) != -1
 }
