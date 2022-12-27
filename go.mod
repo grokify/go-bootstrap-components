@@ -3,7 +3,7 @@ module github.com/grokify/bootstrapper
 go 1.18
 
 require (
-	github.com/grokify/mogo v0.43.0
+	github.com/grokify/mogo v0.44.0
 	github.com/valyala/quicktemplate v1.7.0
 	golang.org/x/net v0.4.0
 )

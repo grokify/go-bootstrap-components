@@ -5,8 +5,8 @@ github.com/aymerick/douceur v0.2.0/go.mod h1:wlT5vV2O3h55X9m7iVYN0TBM0NH/MmbLnd3
 github.com/golang/snappy v0.0.3/go.mod h1:/XxbfmMg8lxefKM7IXC3fBNl/7bRcc72aCRzEWrmP2Q=
 github.com/gorilla/css v1.0.0 h1:BQqNyPTi50JCFMTw/b67hByjMVXZRwGha6wxVGkeihY=
 github.com/gorilla/css v1.0.0/go.mod h1:Dn721qIggHpt4+EFCcTLTU/vk5ySda2ReITrtgBl60c=
-github.com/grokify/mogo v0.43.0 h1:0wowSgR0k4+RT5+3Xr4WHTJFOs4AutjpM76VNuCBGWE=
-github.com/grokify/mogo v0.43.0/go.mod h1:9uiW6sJXlHqoRoYcOHgKh2zEb1bhCWH1FlMIRAJmrt4=
+github.com/grokify/mogo v0.44.0 h1:7l08vBtovpEtsKItOPj8dv34gG0WK7tgF2ybYnvy60k=
+github.com/grokify/mogo v0.44.0/go.mod h1:OtHScf6nlByQ37lxeLRu7Z09IHbO6V6tKS6Rr4pCU0c=
 github.com/huandu/xstrings v1.4.0 h1:D17IlohoQq4UcpqD7fDk80P7l+lwAmlFaBHgOipl2FU=
 github.com/huandu/xstrings v1.4.0/go.mod h1:y5/lhBue+AyNmUVz9RLU9xbLR0o4KIIExikq4ovT0aE=
 github.com/klauspost/compress v1.13.4/go.mod h1:8dP1Hq4DHOhN9w426knH3Rhby4rFm6D8eO+e+Dq5Gzg=
