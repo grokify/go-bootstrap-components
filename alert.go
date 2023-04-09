@@ -34,7 +34,7 @@ var alerts = [...]string{
 }
 
 func NewAlert(idx int) Alert {
-	return Alert(bigint.Int64Mod(int64(idx), int64(len(alerts))))
+	return Alert(bigint.ModInt64(int64(idx), int64(len(alerts))))
 }
 
 // Class returns the class name of the alert ("Primary", "Secondary", ...).
@@ -73,7 +73,7 @@ var alertscolored = [...]string{
 }
 
 func NewAlertColored(idx int) AlertColored {
-	return AlertColored(bigint.Int64Mod(int64(idx), int64(len(alertscolored))))
+	return AlertColored(bigint.ModInt64(int64(idx), int64(len(alertscolored))))
 }
 
 // Class returns the class name of the alert ("Primary", "Secondary", ...).

@@ -28,7 +28,7 @@ func TestAlertColored(t *testing.T) {
 		got2alert := NewAlertColored(got2index)
 		got2string := got2alert.String()
 		if got2string != tt.want {
-			t.Errorf("AlertColored: %v.String(): want[%v], got [%v]", got2alert.String(), tt.want, got2string)
+			t.Errorf("AlertColored: %v.String(): Alert (%d), want[%v], got [%v]", got2alert.String(), got2alert, tt.want, got2string)
 		}
 		got3index := tt.vAlertIndex
 		got3alert := NewAlertColored(got3index)
