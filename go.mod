@@ -5,7 +5,7 @@ go 1.18
 require (
 	github.com/grokify/mogo v0.50.0
 	github.com/valyala/quicktemplate v1.7.0
-	golang.org/x/net v0.10.0
+	golang.org/x/net v0.11.0
 )
 
 require (
