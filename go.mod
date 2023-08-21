@@ -3,7 +3,7 @@ module github.com/grokify/bootstrapper
 go 1.18
 
 require (
-	github.com/grokify/mogo v0.52.0
+	github.com/grokify/mogo v0.53.0
 	github.com/valyala/quicktemplate v1.7.0
 	golang.org/x/net v0.14.0
 )
@@ -14,7 +14,7 @@ require (
 	github.com/huandu/xstrings v1.4.0 // indirect
 	github.com/microcosm-cc/bluemonday v1.0.25 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
-	golang.org/x/exp v0.0.0-20230728194245-b0cb94b80691 // indirect
+	golang.org/x/exp v0.0.0-20230817173708-d852ddb80c63 // indirect
 	golang.org/x/text v0.12.0 // indirect
 )
 
