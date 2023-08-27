@@ -19,4 +19,4 @@ require (
 	golang.org/x/text v0.12.0 // indirect
 )
 
-// replace github.com/grokify/mogo v0.40.13 => ../mogo
+// replace github.com/grokify/mogo => ../mogo
