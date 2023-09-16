@@ -17,7 +17,7 @@ Supported Components:
 - [x] List Group - https://getbootstrap.com/docs/5.2/components/list-group/
 - [x] Panels - https://getbootstrap.com/docs/3.3/components/#panels
 
- [build-status-svg]: https://github.com/grokify/bootstrapper/workflows/go%20build/badge.svg
+ [build-status-svg]: https://github.com/grokify/bootstrapper/workflows/test/badge.svg
  [build-status-url]: https://github.com/grokify/bootstrapper/actions
  [goreport-svg]: https://goreportcard.com/badge/github.com/grokify/bootstrapper
  [goreport-url]: https://goreportcard.com/report/github.com/grokify/bootstrapper
