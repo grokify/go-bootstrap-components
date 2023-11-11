@@ -7,7 +7,7 @@ go 1.21
 require (
 	github.com/grokify/mogo v0.60.1
 	github.com/valyala/quicktemplate v1.7.0
-	golang.org/x/net v0.17.0
+	golang.org/x/net v0.18.0
 )
 
 require (
