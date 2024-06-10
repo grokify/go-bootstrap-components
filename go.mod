@@ -5,19 +5,19 @@ go 1.22.0
 toolchain go1.22.2
 
 require (
-	github.com/grokify/mogo v0.64.2
+	github.com/grokify/mogo v0.64.4
 	github.com/valyala/quicktemplate v1.7.0
-	golang.org/x/net v0.25.0
+	golang.org/x/net v0.26.0
 )
 
 require (
 	github.com/aymerick/douceur v0.2.0 // indirect
 	github.com/gorilla/css v1.0.1 // indirect
-	github.com/huandu/xstrings v1.4.0 // indirect
+	github.com/huandu/xstrings v1.5.0 // indirect
 	github.com/microcosm-cc/bluemonday v1.0.26 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
-	golang.org/x/exp v0.0.0-20240531132922-fd00a4e0eefc // indirect
-	golang.org/x/text v0.15.0 // indirect
+	golang.org/x/exp v0.0.0-20240604190554-fc45aab8b7f8 // indirect
+	golang.org/x/text v0.16.0 // indirect
 )
 
 // replace github.com/grokify/mogo => ../mogo
